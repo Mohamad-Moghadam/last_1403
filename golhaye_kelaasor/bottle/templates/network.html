@@ -6,8 +6,12 @@
     <title>Network</title>
   </head>
   <body>
-    {%for message in data%}
-    <p style="color: palevioletred">{{message}}</p>
+    {%for message_data in data%}
+    <p>
+      <span style="color: blueviolet">{{ message_data.sender }}</span
+      ><span style="color: palevioletred">{{ message_data.text }}</span>
+      <span style="font-size: x-small">{{ message_data.date }}</span>
+    </p>
     {% endfor %}
   </body>
 </html>
