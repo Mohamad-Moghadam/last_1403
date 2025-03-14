@@ -5,7 +5,7 @@ import json
 
 
 # Create your views here.
-def sing_up(request):
+def sign_up(request):
     if request.method == "POST":
         data = json.loads(request.body)
         User.objects.create(
