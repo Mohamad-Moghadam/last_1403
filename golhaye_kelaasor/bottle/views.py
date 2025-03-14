@@ -25,7 +25,7 @@ def new_message(request):
             sender_id = data.get("sender"),
             text = data.get("text"),
         )
-        return HttpResponse(f"{data.get("text")}")
+        return HttpResponse(f"{data.get('text')}")
     
 def list_messages(request):
     data = Message.objects.all()
