@@ -26,3 +26,7 @@ def new_message(request):
             text = data.get("text"),
         )
         return HttpResponse(f"{data.get('text')}")
+    
+def list_messages(request):
+    data = Message.objects.all()
+    return render(request,"network.html", context={"data": data})
