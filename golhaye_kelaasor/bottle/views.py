@@ -14,3 +14,5 @@ def sing_up(request):
             phone_number = data.get("phone_number")
             )
         return HttpResponse("دمدم گرم")
+    
+    
