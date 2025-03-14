@@ -19,10 +19,10 @@ def sign_up(request):
 
 @csrf_exempt
 def new_message(request):
-    if request == "POST":
-        data = json.load(request.body)
+    if request.method == "POST":
+        data = json.loads(request.body)
         Message.objects.create(
-            sender = data.get("sender"),
-            reciver = data.get("reciver"),
+            sender_id = data.get("sender"),
             text = data.get("text"),
         )
+        return HttpResponse(f"{data.get("text")}")
